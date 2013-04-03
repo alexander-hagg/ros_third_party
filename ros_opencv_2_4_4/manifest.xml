@@ -1,0 +1,19 @@
+<package>
+  <description brief="opencv_2_4_4">
+
+     opencv_2_4_4
+
+  </description>
+  <author>alex</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/opencv_2_4_4</url>
+
+<export>
+    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -Wl,-rpath,${prefix}/lib -lopencv" />
+  </export>
+
+
+</package>
+
+
