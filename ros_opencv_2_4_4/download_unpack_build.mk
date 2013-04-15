@@ -8,11 +8,10 @@ UNPACK_CMD = tar xjf
 include $(shell rospack find mk)/download_unpack_build.mk
 
 opencv: $(SOURCE_DIR)/unpacked
-        mkdir -p src
-        cd $(SOURCE_DIR) && python setup.py build 
-        rm -rf src
-        mv `python find_pylib.py opencv $(SOURCE_DIR)/build/` src
-        touch opencv
+        mkdir build
+	cd build
+	cmake ..
+	make
 clean:
         -rm -rf src $(SOURCE_DIR) opencv
 wipe: clean
