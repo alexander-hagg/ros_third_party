@@ -8,11 +8,10 @@ UNPACK_CMD = tar xjf
 include $(shell rospack find mk)/download_unpack_build.mk
 
 opencv: $(SOURCE_DIR)/unpacked
-        mkdir build
 	cd build
-	cmake ..
+	cmake $(SOURCE_DIR)
 	make
 clean:
-        -rm -rf src $(SOURCE_DIR) opencv
+	-rm -rf src $(SOURCE_DIR) opencv
 wipe: clean
-        -rm -rf build
+	-rm -rf build
